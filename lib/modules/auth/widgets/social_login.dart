@@ -44,6 +44,7 @@ class SocialLogin extends StatelessWidget {
             Image.asset(AppAssets.googleIcon, width: 30.w, height: 25.h),
           ],
         ),
+
         40.verticalSpace,
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,11 +57,16 @@ class SocialLogin extends StatelessWidget {
               ),
             ),
             2.horizontalSpace,
-            Text(
-              "Signup",
-              style: AppTextStyles.bodyText1.copyWith(
-                fontSize: 12.sp,
-                color: AppColors.primaryColor,
+            GestureDetector(
+              onTap: () {
+                context.pushNamed(Routes.signup.name);
+              },
+              child: Text(
+                "Signup",
+                style: AppTextStyles.bodyText1.copyWith(
+                  fontSize: 12.sp,
+                  color: AppColors.primaryColor,
+                ),
               ),
             ),
           ],
