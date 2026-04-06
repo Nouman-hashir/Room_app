@@ -17,12 +17,12 @@ class LoginForm extends StatelessWidget {
         20.verticalSpace,
         CustomTextField(
           hint: "Enter your email here",
-          icon: 'assets/images/email.png',
+          icon: AppAssets.email,
         ),
         20.verticalSpace,
         CustomTextField(
           hint: "Password",
-          icon: 'assets/images/lock_icon.png',
+          icon: AppAssets.lockIcon,
           isPassword: true,
         ),
         10.verticalSpace,
