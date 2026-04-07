@@ -3,12 +3,9 @@ import '../../../app.dart';
 class AuthBackground extends StatelessWidget {
   final Widget child;
   final bool showBack;
+  final int height;
 
-  const AuthBackground({
-    super.key,
-    required this.child,
-    this.showBack = false,
-  });
+  const AuthBackground({super.key, required this.child, this.showBack = false, required this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +14,7 @@ class AuthBackground extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 310.h,
+            height: height.h,
             width: double.infinity,
             child: Stack(
               children: [
@@ -33,26 +30,30 @@ class AuthBackground extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       child: GestureDetector(
                         onTap: () => Navigator.pop(context),
-                        child: const Icon(Icons.arrow_back_ios, color: AppColors.white),
+                        child: const Icon(
+                          Icons.arrow_back_ios,
+                          color: AppColors.white,
+                        ),
                       ),
                     ),
                   ),
-               
               ],
             ),
           ),
-           Container(
-                height: MediaQuery.of(context).size.height * 0.62,
-                width: double.infinity,
-                padding: EdgeInsets.all(20.w),
-                decoration:  BoxDecoration(
-                  color: AppColors.white,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(40.r),
-                  ),
-                ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(20.w),
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
+              ),
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
                 child: child,
               ),
+            ),
+          ),
         ],
       ),
     );

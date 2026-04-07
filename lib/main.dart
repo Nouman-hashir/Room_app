@@ -1,5 +1,3 @@
-import 'package:provider/provider.dart';
-
 import 'app.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -18,7 +16,12 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       child: MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => SplashProvider()),
+          ChangeNotifierProvider(create: (_) => SplashProvider(),
+          ),
+           ChangeNotifierProvider(create: (_) => TextfieldProvider(),
+          ),
+          ChangeNotifierProvider(create: (_) => ForgetPasswordProvider(),
+          ),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
