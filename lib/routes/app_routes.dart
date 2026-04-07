@@ -16,6 +16,18 @@ class AppRouter {
         name: Routes.login.name,
         builder: (context, state) => const LoginScreen(),
       ),
+      GoRoute(
+        path: '/signup',
+        name: Routes.signup.name,
+        builder: (context, state) => const SignupScreen(),
+      ),
+      GoRoute(
+        path: '/forgetpassword',
+        name: Routes.forgetpassword.name,
+        builder: (context, state) => const ForgetPasswordScreen(),
+      ),
+     
     ],
+
   );
 }

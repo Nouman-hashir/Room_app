@@ -6,4 +6,10 @@ class AppAssets {
   static const String lockIcon = 'assets/images/lock_icon.png';
   static const String googleIcon = 'assets/images/google.png';
   static const String facebookIcon = 'assets/images/facebook.png';
+  static const String eyeOpen = 'assets/images/eye.png';
+  static const String eyeClose = 'assets/images/eye_slash.png';
+  static const String cancelIcon = 'assets/images/cancel_icon.png';
+  static const String arrowdown = 'assets/images/arrow_down.png';
+  static const String callIcon = 'assets/images/call_icon.png';
+  static const String country = 'assets/images/global_search.png';
 }
