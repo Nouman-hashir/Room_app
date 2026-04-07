@@ -1,4 +1,3 @@
-import 'package:dotted_line/dotted_line.dart';
 import 'package:room/app.dart';
 
 class SocialLogin extends StatelessWidget {

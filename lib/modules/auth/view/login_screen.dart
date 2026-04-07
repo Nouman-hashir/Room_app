@@ -12,17 +12,19 @@ class LoginScreen extends StatelessWidget {
           AuthHeader(),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.all(20),
+              padding:  EdgeInsets.all(20.w),
               decoration: BoxDecoration(
                 color: AppColors.white,
                 borderRadius: BorderRadius.vertical(top: Radius.circular(40.r)),
               ),
-              child: Column(
-                children:  [
-                  LoginForm(),
-                  25.verticalSpace,
-                  SocialLogin(),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children:  [
+                    LoginForm(),
+                    25.verticalSpace,
+                    SocialLogin(),
+                  ],
+                ),
               ),
             ),
           ),

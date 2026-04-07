@@ -1,5 +1,3 @@
-import 'package:dropdown_flutter/custom_dropdown.dart';
-
 import '../../../app.dart';
 
 class SignupForm extends StatelessWidget {
