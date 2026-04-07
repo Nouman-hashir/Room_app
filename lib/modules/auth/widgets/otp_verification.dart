@@ -1,4 +1,3 @@
-import 'package:pinput/pinput.dart';
 import 'package:room/app.dart';
 
 class OtpVerificationScreen extends StatelessWidget {

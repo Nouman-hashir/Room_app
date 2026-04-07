@@ -18,7 +18,7 @@ class AuthHeader extends StatelessWidget {
           ),
           Positioned(
             left: 0,
-            top: 50,
+            top: 30,
             bottom: 0,
             child: Image.asset(
               AppAssets.sideVector,

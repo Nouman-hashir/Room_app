@@ -10,3 +10,8 @@ export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:go_router/go_router.dart';
 export 'package:provider/provider.dart';
 export 'package:room/main.dart';
+
+//widgets
+export 'package:dotted_line/dotted_line.dart';
+export 'package:pinput/pinput.dart';
+export 'package:dropdown_flutter/custom_dropdown.dart';
