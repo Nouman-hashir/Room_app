@@ -12,4 +12,9 @@ class AppAssets {
   static const String arrowdown = 'assets/images/arrow_down.png';
   static const String callIcon = 'assets/images/call_icon.png';
   static const String country = 'assets/images/global_search.png';
+  static const String explore = 'assets/images/explore_icon.png';
+  static const String favourite = 'assets/images/heart_circle.png';
+  static const String trips = 'assets/images/trip_icon.png';
+  static const String message = 'assets/images/messages_icon.png';
+  static const String profile = 'assets/images/profile_icon.png';
 }

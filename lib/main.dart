@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
           ),
           ChangeNotifierProvider(create: (_) => ForgetPasswordProvider(),
           ),
+          ChangeNotifierProvider(create: (_) => LoginProvider(),
+          ),
+         ChangeNotifierProvider(create: (_) => BottomNavProvider(),
+          ),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,

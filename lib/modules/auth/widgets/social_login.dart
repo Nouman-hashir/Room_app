@@ -58,7 +58,7 @@ class SocialLogin extends StatelessWidget {
             2.horizontalSpace,
             GestureDetector(
               onTap: () {
-                context.pushNamed(Routes.signup.name);
+                context.push('/signup');
               },
               child: Text(
                 "Signup",
