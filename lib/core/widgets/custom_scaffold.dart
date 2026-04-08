@@ -6,6 +6,7 @@ class CustomScaffold extends StatelessWidget {
   final bool showAppBar;
   final String? title;
   final bool showBack;
+  final bool showBottomNav;
 
   const CustomScaffold({
     super.key,
@@ -14,6 +15,7 @@ class CustomScaffold extends StatelessWidget {
     this.showAppBar = false,
     this.title,
     this.showBack = false,
+    this.showBottomNav = false,
   });
 
   @override
@@ -32,6 +34,9 @@ class CustomScaffold extends StatelessWidget {
                   : null,
             )
           : null,
+      // bottomNavigationBar: showBottomNav
+      //     ? 
+      //     : null,
 
       body: SafeArea(child: child),
     );

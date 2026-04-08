@@ -26,7 +26,11 @@ class AppRouter {
         name: Routes.forgetpassword.name,
         builder: (context, state) => const ForgetPasswordScreen(),
       ),
-     
+      GoRoute(
+        path: '/bottomnav',
+        name: Routes.bottomNav.name,
+        builder: (context, state) => const BottomNavScreen(),
+      ),
     ],
 
   );

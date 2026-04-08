@@ -1,2 +1,8 @@
 export 'splash/splash.dart';
 export 'auth/auth.dart';
+export 'bottom_nav/bottom_nav.dart';
+export 'explore/explore.dart';
+export 'favourites/favourites.dart';
+export 'trips/trips.dart';
+export 'messages/messages.dart';
+export 'profile/profile.dart';

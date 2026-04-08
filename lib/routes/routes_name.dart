@@ -3,4 +3,5 @@ enum Routes {
   login,
   signup,
   forgetpassword,
+  bottomNav,
 }
