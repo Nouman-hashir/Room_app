@@ -54,7 +54,9 @@ class ExploreBody extends StatelessWidget {
             ],
           ),
           20.verticalSpace,
-          AppButtons.customIconButton(width: 60, onTap: () {}),
+          AppButtons.customIconButton(width: 60, onTap: () {
+            context.pushNamed(Routes.filter.name);
+          }),
           20.verticalSpace,
           Expanded(child: VehicleList()),
         ],

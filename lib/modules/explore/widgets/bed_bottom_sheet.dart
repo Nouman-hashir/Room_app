@@ -22,6 +22,7 @@ class BedBottomSheet extends StatelessWidget {
               return SleepsWidget(title: beds[index], sleeps: '0');
             },
           ),
+          20.verticalSpace,
           AppButtons.customButton(text: "Done", onTap: () {
             context.pop();
           }),

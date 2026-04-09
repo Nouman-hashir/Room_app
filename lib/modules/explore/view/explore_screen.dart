@@ -6,7 +6,6 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      backgroundColor: AppColors.white,
       child: Column(
         children: [
           ExploreHeader(),

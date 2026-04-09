@@ -32,18 +32,15 @@ class AppButtons {
     required int width,
     required VoidCallback onTap,
   }) {
-    return SizedBox(
-      width: width.w,
-      height: 50.h,
-      child: ElevatedButton(
-        onPressed: onTap,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF0E7A3D),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 15.h),
+        decoration: BoxDecoration(
+         color: AppColors.primaryColor,
+          borderRadius: BorderRadius.circular(10.r),
         ),
-        child: Image.asset(AppAssets.menuIcon, height: 24.h, width: 24.w)
+        child: Image.asset(AppAssets.menuIcon, height: 22.h, width: 22.w),
       ),
     );
   }

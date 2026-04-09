@@ -39,7 +39,7 @@ class DateSelectionSheet extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 180.h,
+              height: 190.h,
               child: TabBarView(children: [DatesTab(), FlexibleTab()]),
             ),
             AppButtons.customButton(

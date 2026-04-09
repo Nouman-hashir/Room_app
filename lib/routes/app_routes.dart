@@ -31,6 +31,11 @@ class AppRouter {
         name: Routes.bottomNav.name,
         builder: (context, state) => const BottomNavScreen(),
       ),
+      GoRoute(
+        path: '/filter',
+        name: Routes.filter.name,
+        builder: (context, state) => const FiltersScreen(),
+      ),
     ],
 
   );

@@ -5,12 +5,14 @@ class CustomScaffold extends StatelessWidget {
   final Color? backgroundColor;
   final bool showAppBar;
   final String? title;
+  final String? subtitle;
   final bool showBack;
   final bool showBottomNav;
 
   const CustomScaffold({
     super.key,
     required this.child,
+    this.subtitle,
     this.backgroundColor,
     this.showAppBar = false,
     this.title,
@@ -21,9 +23,11 @@ class CustomScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor ?? AppColors.primaryColor,
+      backgroundColor: backgroundColor ?? AppColors.white,
       appBar: showAppBar
           ? AppBar(
+            forceMaterialTransparency: true,
+            actionsPadding: EdgeInsets.symmetric(horizontal: 20.w),
               title: Text(title ?? ""),
               centerTitle: true,
               leading: showBack
@@ -31,7 +35,10 @@ class CustomScaffold extends StatelessWidget {
                       icon: const Icon(Icons.arrow_back_ios),
                       onPressed: () => Navigator.pop(context),
                     )
-                  : null,
+                  : SizedBox(),
+                  actions: [
+                    Text(subtitle ?? ""),
+                  ],
             )
           : null,
       body: SafeArea(child: child),

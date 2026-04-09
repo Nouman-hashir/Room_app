@@ -1,13 +1,13 @@
 import '../../../app.dart';
 
 class DatesTab extends StatelessWidget {
-  const DatesTab({super.key,});
+  const DatesTab({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [_chip("Exact"), _chip("1 day"), _chip("2 day")],
+      children: [_chip("Exact", isSelected: true), _chip("1 day"), _chip("2 day")],
     );
   }
 }
@@ -16,7 +16,9 @@ Widget _chip(String text, {bool isSelected = false}) {
   return Container(
     padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 12.h),
     decoration: BoxDecoration(
-      border: isSelected ? Border.all(color: AppColors.primaryColor) : Border.all(color: AppColors.grey300),
+      border: isSelected
+          ? Border.all(color: AppColors.primaryColor)
+          : Border.all(color: AppColors.grey300),
       borderRadius: BorderRadius.circular(12.r),
     ),
     child: Text(

@@ -13,7 +13,8 @@ class VehicleList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
+      separatorBuilder: (context, index) => 20.verticalSpace,
       itemCount: vehicles.length,
       itemBuilder: (context, index) {
         return VehicleListItem(

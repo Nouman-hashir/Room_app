@@ -24,4 +24,10 @@ class AppAssets {
   static const String dateIcon = 'assets/images/date_icon.png';
   static const String menuIcon = 'assets/images/menu_icon.png';
   static const String car = 'assets/images/car.png';
+  static const String bus = 'assets/images/bus.png';
+  static const String heart = 'assets/images/heart.png';
+  static const String tick = 'assets/images/tick_circle.png';
+
+
+
 }
