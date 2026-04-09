@@ -17,4 +17,11 @@ class AppAssets {
   static const String trips = 'assets/images/trip_icon.png';
   static const String message = 'assets/images/messages_icon.png';
   static const String profile = 'assets/images/profile_icon.png';
+  static const String profileImage = 'assets/images/profile.png';
+  static const String notification = 'assets/images/notification.png';
+  static const String location = 'assets/images/location.png';
+  static const String bedIcon = 'assets/images/bed_icon.png';
+  static const String dateIcon = 'assets/images/date_icon.png';
+  static const String menuIcon = 'assets/images/menu_icon.png';
+  static const String car = 'assets/images/car.png';
 }

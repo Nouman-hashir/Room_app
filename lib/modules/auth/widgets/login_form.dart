@@ -41,7 +41,7 @@ class LoginForm extends StatelessWidget {
           ),
         ),
         10.verticalSpace,
-        CustomButton(text: "Login", onTap: () {
+        AppButtons.customButton(text: "Login", onTap: () {
           context.pushNamed(Routes.bottomNav.name);
         }),
       ],

@@ -7,8 +7,11 @@ class ExploreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       backgroundColor: AppColors.white,
-      child: Center(
-        child: Text("Explore Screen", style: AppTextStyles.headline2),
+      child: Column(
+        children: [
+          ExploreHeader(),
+          Expanded(child: ExploreBody()),
+        ],
       ),
     );
   }

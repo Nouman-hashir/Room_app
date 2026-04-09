@@ -2,20 +2,19 @@ import '../../../app.dart';
 
 class BottomNavScreen extends StatelessWidget {
   const BottomNavScreen({super.key});
-   
-   static const List<Widget> screens = [
-          ExploreScreen(),
-          FavouritesScreen(),
-          TripsScreen(),
-          MessagesScreen(),
-          ProfileScreen(),
-        ];
+
+  static const List<Widget> screens = [
+    ExploreScreen(),
+    FavouritesScreen(),
+    TripsScreen(),
+    MessagesScreen(),
+    ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Consumer<BottomNavProvider>(
       builder: (context, provider, child) {
-       
         return CustomScaffold(
           backgroundColor: AppColors.white,
           child: Column(

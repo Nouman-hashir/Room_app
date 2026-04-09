@@ -21,30 +21,12 @@ class SignupForm extends StatelessWidget {
         20.verticalSpace,
         CustomTextField(hint: "Name", icon: AppAssets.email),
         20.verticalSpace,
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 15.w),
-          decoration: BoxDecoration(
-            border: Border.all(color: AppColors.grey300, width: 0.75.w),
-            borderRadius: BorderRadius.circular(12.r),
-          ),
-          child: DropdownFlutter<String>(
-            hintText: 'United States',
-            items: [
-              'Pakistan',
-              'England',
-              'Australia',
-              'India',
-              'United States',
-            ],
-            decoration: CustomDropdownDecoration(
-              prefixIcon: SizedBox(
-                width: 18.w,
-                height: 18.h,
-                child: Image.asset(AppAssets.country),
-              ),
-            ),
-            onChanged: (value) {},
-          ),
+        CustomDropdown<String>(
+          hintText: "Select Country",
+          prefixIcon: AppAssets.country,
+          items: ['Pakistan', 'England', 'Australia', 'India', 'United States'],
+          value: null,
+          onChanged: (value) {},
         ),
         20.verticalSpace,
         CustomTextField(hint: "Email", icon: AppAssets.email),
@@ -70,7 +52,7 @@ class SignupForm extends StatelessWidget {
           children: [
             Checkbox(
               value: loginProvider.isChecked,
-              checkColor: AppColors.white, 
+              checkColor: AppColors.white,
               activeColor: AppColors.primaryColor,
               onChanged: (value) {
                 loginProvider.toggleCheckbox(value);
@@ -90,7 +72,6 @@ class SignupForm extends StatelessWidget {
                     style: AppTextStyles.subtitle2.copyWith(
                       color: AppColors.primaryColor,
                       fontSize: 13.sp,
-                      
                     ),
                   ),
                   TextSpan(
@@ -114,7 +95,7 @@ class SignupForm extends StatelessWidget {
           ],
         ),
         10.verticalSpace,
-        CustomButton(
+        AppButtons.customButton(
           text: "SignUp",
           onTap: () {
             if (onSignUp != null) {

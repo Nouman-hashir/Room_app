@@ -34,29 +34,36 @@ class CustomTextField extends StatelessWidget {
                 child: Image.asset(icon),
               ),
             ),
-            suffixIcon: Padding(
-              padding: EdgeInsets.all(15.w),
-              child: GestureDetector(
-                onTap: () {
-                  if (isPassword) {
-                    provider.toggleObscure();
-                  }
-                },
-                child: SizedBox(
-                  width: 15.w,
-                  height: 15.h,
-                  child: suffixIcon != null
-                      ? Image.asset(suffixIcon!)
-                      : Image.asset(
-                          isPassword
-                              ? (provider.isObscure
-                                  ? AppAssets.eyeClose
-                                  : AppAssets.eyeOpen)
-                              : AppAssets.cancelIcon,
-                        ),
-                ),
-              ),
-            ),
+            suffixIcon:
+                (suffixIcon != null ||
+                    isPassword ||
+                    controller?.text.isNotEmpty == true)
+                ? Padding(
+                    padding: EdgeInsets.all(15.w),
+                    child: GestureDetector(
+                      onTap: () {
+                        if (isPassword) {
+                          provider.toggleObscure();
+                        } else if (controller != null) {
+                          controller!.clear();
+                        }
+                      },
+                      child: SizedBox(
+                        width: 15.w,
+                        height: 15.h,
+                        child: suffixIcon != null
+                            ? Image.asset(suffixIcon!)
+                            : isPassword
+                            ? Image.asset(
+                                provider.isObscure
+                                    ? AppAssets.eyeClose
+                                    : AppAssets.eyeOpen,
+                              )
+                            : Image.asset(AppAssets.cancelIcon),
+                      ),
+                    ),
+                  )
+                : null,
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: AppColors.grey300, width: 0.75.w),
               borderRadius: BorderRadius.circular(12.r),
