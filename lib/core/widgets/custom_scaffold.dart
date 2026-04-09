@@ -34,10 +34,6 @@ class CustomScaffold extends StatelessWidget {
                   : null,
             )
           : null,
-      // bottomNavigationBar: showBottomNav
-      //     ? 
-      //     : null,
-
       body: SafeArea(child: child),
     );
   }

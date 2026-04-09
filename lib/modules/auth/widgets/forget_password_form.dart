@@ -31,7 +31,7 @@ class ForgetPasswordForm extends StatelessWidget {
         20.verticalSpace,
         CustomTextField(hint: "Enter your email here", icon: AppAssets.email),
         40.verticalSpace,
-        CustomButton(text: "Continue", onTap: () {
+        AppButtons.customButton(text: "Continue", onTap: () {
             if (onContinue != null) {
               onContinue!();
             }

@@ -41,7 +41,7 @@ class ChangePasswordForm extends StatelessWidget {
           isPassword: true,
         ),
         40.verticalSpace,
-        CustomButton(text: "Continue", onTap: () {
+        AppButtons.customButton(text: "Continue", onTap: () {
           context.pop();
         }),
         20.verticalSpace,

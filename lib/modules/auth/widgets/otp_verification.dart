@@ -91,7 +91,7 @@ class OtpVerificationScreen extends StatelessWidget {
           ),
         ),
         42.verticalSpace,
-        CustomButton(text: "Continue", onTap: () {
+        AppButtons.customButton(text: "Continue", onTap: () {
           context.pop();
         }),
       ],
