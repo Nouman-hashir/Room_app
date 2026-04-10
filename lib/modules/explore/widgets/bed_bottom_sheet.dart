@@ -2,7 +2,7 @@ import '../../../app.dart';
 
 class BedBottomSheet extends StatelessWidget {
   const BedBottomSheet({super.key});
-  static final List<String> beds = ["Sleep 1", "Sleep 2", "Sleep 3", "Sleep 4"];
+  static final List<String> beds = ["Sleep 1", "Sleep 2", "Sleep 3", "Sleep 4", "Sleep 5 or more", ];
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,16 @@ class BedBottomSheet extends StatelessWidget {
       ),
       child: Column(
         children: [
-          ListView.builder(
-            itemCount: beds.length,
-            shrinkWrap: true,
-            itemBuilder: (context, index) {
-              return SleepsWidget(title: beds[index], sleeps: '0');
-            },
+          Expanded(
+            child: ListView.builder(
+              itemCount: beds.length,
+              shrinkWrap: true,
+              itemBuilder: (context, index) {
+                return SleepsWidget(title: beds[index], sleeps: '0');
+              },
+            ),
           ),
+          20.verticalSpace,
           AppButtons.customButton(text: "Done", onTap: () {
             context.pop();
           }),

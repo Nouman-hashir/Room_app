@@ -4,4 +4,5 @@ enum Routes {
   signup,
   forgetpassword,
   bottomNav,
+  filter,
 }

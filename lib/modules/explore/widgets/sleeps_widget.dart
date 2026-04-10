@@ -1,10 +1,16 @@
 import '../../../app.dart';
 
-class SleepsWidget extends StatelessWidget {
+class SleepsWidget extends StatefulWidget {
   final String sleeps;
   final String title;
   const SleepsWidget({super.key, required this.sleeps, required this.title});
 
+  @override
+  State<SleepsWidget> createState() => _SleepsWidgetState();
+}
+
+class _SleepsWidgetState extends State<SleepsWidget> {
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -12,29 +18,32 @@ class SleepsWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            Checkbox(
-              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              value: false,
-              checkColor: AppColors.white,
-              activeColor: AppColors.primaryColor,
-              side: BorderSide(color: AppColors.primaryColor, width: 1.w),
-              onChanged: (value) {},
+            Consumer<FilterProvider>(
+              builder: (context, provider, child) {
+                return Checkbox(
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  value: provider.isSelected(widget.title),
+                  checkColor: AppColors.white,
+                  activeColor: AppColors.primaryColor,
+                  side: BorderSide(color: AppColors.primaryColor, width: 1.w),
+                  onChanged: (val) {
+                    provider.toggleCheckbox(widget.title, val ?? false);
+                  },
+                );
+              },
             ),
             Text(
-              title,
+              widget.title,
               style: AppTextStyles.subtitle2.copyWith(color: AppColors.black),
             ),
             Spacer(),
             Text(
-              sleeps,
+              widget.sleeps,
               style: AppTextStyles.subtitle2.copyWith(color: AppColors.black),
             ),
           ],
         ),
-        Divider(
-          thickness: 1.h,
-          color: AppColors.grey200,
-        ),
+        Divider(thickness: 1.h, color: AppColors.grey200),
       ],
     );
   }

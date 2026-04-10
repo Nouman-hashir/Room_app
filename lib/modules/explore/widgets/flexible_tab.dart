@@ -13,7 +13,7 @@ class FlexibleTab extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            _chip("1 Week"),
+            _chip("1 Week", isSelected: true),
             _chip("2 Weeks"),
             _chip("3 Weeks"),
           ],
@@ -25,26 +25,45 @@ class FlexibleTab extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _chip("January"),
-            _chip("February"),
+            _chip("February", isSelected: true),
             _chip("March"),
           ],
         ),
-  5.verticalSpace
       ],
     );
   }
 }
-Widget _chip(String text) {
-  return Container(
-    padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
-    decoration: BoxDecoration(
-      border: Border.all(color: AppColors.grey300),
-      borderRadius: BorderRadius.circular(12.r),
+
+Widget _chip(String text, {bool isSelected = false}) {
+  return GestureDetector(
+    onTap: () {
+
+    },
+    child: Consumer<ExplorerProvider>(
+      builder: (context, provider, child) {
+        
+      return GestureDetector(
+        onTap: () {
+          provider.selectDate(text);
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            border: provider.selectedDate == text
+                ? Border.all(color: AppColors.primaryColor)
+                : Border.all(color: AppColors.grey300),
+            borderRadius: BorderRadius.circular(12.r),
+          ),
+          child: Text(
+            text,
+            style: AppTextStyles.subtitle2.copyWith(
+              fontSize: 13.sp,
+              color: AppColors.black,
+            ),
+          ),
+        ),
+      );
+      }
     ),
-    child: Text(text,
-        style: AppTextStyles.subtitle2.copyWith(
-      fontSize: 13.sp,
-      color: AppColors.black,
-    )),
   );
 }
