@@ -14,22 +14,28 @@ class _FilterCheckboxTileState extends State<FilterCheckboxTile> {
 
   @override
   Widget build(BuildContext context) {
-    return CheckboxListTile(
-      contentPadding: EdgeInsets.zero,
-      activeColor: AppColors.primaryColor,
-      title: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(widget.title),
-           10.verticalSpace,
-          Divider(thickness: 1.h, color: AppColors.grey200),
-        ],
-      ),
-      value: isChecked,
-      onChanged: (val) {
-        setState(() => isChecked = val ?? false);
+    return Consumer<FilterProvider>(
+      builder: (context, provider, child) {
+        return CheckboxListTile(
+        contentPadding: EdgeInsets.zero,
+        activeColor: AppColors.primaryColor,
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(widget.title,
+                style: AppTextStyles.bodyText1.copyWith(
+                  color: AppColors.black,
+                  fontSize: 13.sp,
+            )),
+          ],
+        ),
+        value: provider.isSelected(widget.title),
+        onChanged: (val) {
+          provider.toggleCheckbox(widget.title, val ?? false);
+        },
+        controlAffinity: ListTileControlAffinity.leading,
+      );
       },
-      controlAffinity: ListTileControlAffinity.leading,
     );
   }
 }

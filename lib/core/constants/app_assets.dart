@@ -27,6 +27,9 @@ class AppAssets {
   static const String bus = 'assets/images/bus.png';
   static const String heart = 'assets/images/heart.png';
   static const String tick = 'assets/images/tick_circle.png';
+  static const String bike = 'assets/images/bike.png';
+
+
 
 
 

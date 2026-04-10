@@ -35,20 +35,35 @@ class FlexibleTab extends StatelessWidget {
 }
 
 Widget _chip(String text, {bool isSelected = false}) {
-  return Container(
-    padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
-    decoration: BoxDecoration(
-      border: isSelected
-          ? Border.all(color: AppColors.primaryColor)
-          : Border.all(color: AppColors.grey300),
-      borderRadius: BorderRadius.circular(12.r),
-    ),
-    child: Text(
-      text,
-      style: AppTextStyles.subtitle2.copyWith(
-        fontSize: 13.sp,
-        color: AppColors.black,
-      ),
+  return GestureDetector(
+    onTap: () {
+
+    },
+    child: Consumer<ExplorerProvider>(
+      builder: (context, provider, child) {
+        
+      return GestureDetector(
+        onTap: () {
+          provider.selectDate(text);
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 10.h),
+          decoration: BoxDecoration(
+            border: provider.selectedDate == text
+                ? Border.all(color: AppColors.primaryColor)
+                : Border.all(color: AppColors.grey300),
+            borderRadius: BorderRadius.circular(12.r),
+          ),
+          child: Text(
+            text,
+            style: AppTextStyles.subtitle2.copyWith(
+              fontSize: 13.sp,
+              color: AppColors.black,
+            ),
+          ),
+        ),
+      );
+      }
     ),
   );
 }

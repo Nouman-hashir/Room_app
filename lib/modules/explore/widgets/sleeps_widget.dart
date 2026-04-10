@@ -10,7 +10,7 @@ class SleepsWidget extends StatefulWidget {
 }
 
 class _SleepsWidgetState extends State<SleepsWidget> {
-   bool isChecked = false;
+  bool isChecked = false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,14 +18,18 @@ class _SleepsWidgetState extends State<SleepsWidget> {
       children: [
         Row(
           children: [
-            Checkbox(
-              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              value: isChecked,
-              checkColor: AppColors.white,
-              activeColor: AppColors.primaryColor,
-              side: BorderSide(color: AppColors.primaryColor, width: 1.w),
-              onChanged: (val) {
-                 setState(() => isChecked = val ?? false);
+            Consumer<FilterProvider>(
+              builder: (context, provider, child) {
+                return Checkbox(
+                  materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                  value: provider.isSelected(widget.title),
+                  checkColor: AppColors.white,
+                  activeColor: AppColors.primaryColor,
+                  side: BorderSide(color: AppColors.primaryColor, width: 1.w),
+                  onChanged: (val) {
+                    provider.toggleCheckbox(widget.title, val ?? false);
+                  },
+                );
               },
             ),
             Text(
@@ -39,10 +43,7 @@ class _SleepsWidgetState extends State<SleepsWidget> {
             ),
           ],
         ),
-        Divider(
-          thickness: 1.h,
-          color: AppColors.grey200,
-        ),
+        Divider(thickness: 1.h, color: AppColors.grey200),
       ],
     );
   }

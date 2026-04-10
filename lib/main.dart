@@ -16,16 +16,13 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       child: MultiProvider(
         providers: [
-          ChangeNotifierProvider(create: (_) => SplashProvider(),
-          ),
-           ChangeNotifierProvider(create: (_) => TextfieldProvider(),
-          ),
-          ChangeNotifierProvider(create: (_) => ForgetPasswordProvider(),
-          ),
-          ChangeNotifierProvider(create: (_) => LoginProvider(),
-          ),
-         ChangeNotifierProvider(create: (_) => BottomNavProvider(),
-          ),
+          ChangeNotifierProvider(create: (_) => SplashProvider()),
+          ChangeNotifierProvider(create: (_) => TextfieldProvider()),
+          ChangeNotifierProvider(create: (_) => ForgetPasswordProvider()),
+          ChangeNotifierProvider(create: (_) => LoginProvider()),
+          ChangeNotifierProvider(create: (_) => BottomNavProvider()),
+          ChangeNotifierProvider(create: (_) => FilterProvider()),
+          ChangeNotifierProvider(create: (_) => ExplorerProvider()),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
@@ -36,4 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

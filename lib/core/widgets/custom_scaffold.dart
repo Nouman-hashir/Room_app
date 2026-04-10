@@ -8,6 +8,7 @@ class CustomScaffold extends StatelessWidget {
   final String? subtitle;
   final bool showBack;
   final bool showBottomNav;
+  final VoidCallback? onResetTap;
 
   const CustomScaffold({
     super.key,
@@ -18,6 +19,7 @@ class CustomScaffold extends StatelessWidget {
     this.title,
     this.showBack = false,
     this.showBottomNav = false,
+    this.onResetTap,
   });
 
   @override
@@ -37,7 +39,9 @@ class CustomScaffold extends StatelessWidget {
                     )
                   : SizedBox(),
                   actions: [
-                    Text(subtitle ?? ""),
+                    GestureDetector(
+                      onTap: onResetTap,
+                      child: Text(subtitle ?? "")),
                   ],
             )
           : null,
