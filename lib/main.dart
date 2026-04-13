@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => FilterProvider()),
           ChangeNotifierProvider(create: (_) => ExplorerProvider()),
           ChangeNotifierProvider(create: (_) => ChatProvider()),
+          ChangeNotifierProvider(create: (_) => ProfileProvider()),
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,

@@ -11,9 +11,10 @@ class MessagesScreen extends StatelessWidget {
       title: title,
       image: image,
       child: AppPadding(
+        horizontal: 20,
         child: Column(
           children: [
-            10.verticalSpace,
+            20.verticalSpace,
             Expanded(
               child: Consumer<ChatProvider>(
                 builder: (context, provider, child) {

@@ -34,6 +34,15 @@ class AppAssets {
   static const String gallery = 'assets/svg/gallery.svg';
   static const String microphone = 'assets/svg/microphone.svg';
   static const String send = 'assets/svg/send.svg';
+  static const String editProfile = 'assets/svg/edit_profile.svg';
+  static const String notificationSvg = 'assets/svg/notification_svg.svg';
+  static const String privacy = 'assets/svg/security.svg';
+  static const String terms = 'assets/svg/terms.svg';
+  static const String logout = 'assets/svg/logout.svg';
+  static const String delete = 'assets/svg/delete.svg';
+
+
+
 
 
 
