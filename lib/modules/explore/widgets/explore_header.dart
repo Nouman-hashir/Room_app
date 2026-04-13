@@ -33,7 +33,10 @@ class ExploreHeader extends StatelessWidget {
           const Spacer(),
           Stack(
             children: [
-              Image.asset(AppAssets.notification, height: 20.h),
+              GestureDetector(
+                onTap: () => context.push('/notification'),
+                child: Image.asset(AppAssets.notification, height: 20.h),
+              ),
               Positioned(
                 right: 0,
                 top: 0,

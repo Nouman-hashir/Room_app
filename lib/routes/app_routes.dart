@@ -51,6 +51,11 @@ class AppRouter {
         name: Routes.editprofile.name,
         builder: (context, state) => const EditProfileScreen(),
       ),
+       GoRoute(
+        path: '/notification',
+        name: Routes.notifications.name,
+        builder: (context, state) => const NotificationsScreen(),
+      ),
     ],
   );
 }
