@@ -5,4 +5,5 @@ enum Routes {
   forgetpassword,
   bottomNav,
   filter,
+  messages,
 }

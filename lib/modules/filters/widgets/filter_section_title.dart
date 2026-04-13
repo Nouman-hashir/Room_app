@@ -2,8 +2,9 @@ import '../../../app.dart';
 
 class FilterSectionTitle extends StatelessWidget {
   final String title;
+  final int fontSize;
 
-  const FilterSectionTitle({super.key, required this.title});
+  const FilterSectionTitle({super.key, required this.title, this.fontSize = 14});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class FilterSectionTitle extends StatelessWidget {
       child: Text(
         title,
         style: AppTextStyles.headline3.copyWith(
-          fontSize: 14.sp,
+          fontSize: fontSize.sp,
           fontWeight: FontWeight.w600,
         ),
       ),

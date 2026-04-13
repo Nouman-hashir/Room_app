@@ -37,7 +37,7 @@ class AppColors {
   static const Color darktextColor = Color(0xFF8A7B60);
   static const Color blue = Color(0xff4aa9ff);
   static const Color green = Colors.green;
-  static const Color lightgreen = Color(0xff34C759);
+  // static const Color lightgreen = Color(0xff34C759);
   static const Color yellow = Colors.yellow;
   static const Color purple = Colors.purple;
   static const Color lightgrey = Color(0xffF3F4F6);
@@ -48,7 +48,7 @@ class AppColors {
   static const Color primaryColor = Color(0xFF04773B);
   static const Color secondaryColor = Color(0xFFFFFFFF);
   static const Color accentColor = Color(0xFFFDEFD6);
-
+  static const Color lightgreen = Color(0xFFECFFF5);
   static const LinearGradient blueSkinGradient = LinearGradient(
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
