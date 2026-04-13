@@ -10,6 +10,7 @@ export 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:go_router/go_router.dart';
 export 'package:provider/provider.dart';
 export 'package:room/main.dart';
+export 'package:flutter_svg/flutter_svg.dart';
 
 //widgets
 export 'package:dotted_line/dotted_line.dart';

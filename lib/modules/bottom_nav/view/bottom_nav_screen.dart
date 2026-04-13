@@ -7,7 +7,7 @@ class BottomNavScreen extends StatelessWidget {
     ExploreScreen(),
     FavouritesScreen(),
     TripsScreen(),
-    MessagesScreen(),
+    ChatScreen(),
     ProfileScreen(),
   ];
 

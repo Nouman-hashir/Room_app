@@ -17,6 +17,7 @@ class AppAssets {
   static const String trips = 'assets/images/trip_icon.png';
   static const String message = 'assets/images/messages_icon.png';
   static const String profile = 'assets/images/profile_icon.png';
+  static const String profile1 = 'assets/images/profile_1.png';
   static const String profileImage = 'assets/images/profile.png';
   static const String notification = 'assets/images/notification.png';
   static const String location = 'assets/images/location.png';
@@ -28,8 +29,11 @@ class AppAssets {
   static const String heart = 'assets/images/heart.png';
   static const String tick = 'assets/images/tick_circle.png';
   static const String bike = 'assets/images/bike.png';
-
-
+  static const String call = 'assets/svg/call_icon.svg';
+  static const String videoCall = 'assets/svg/video.svg';
+  static const String gallery = 'assets/svg/gallery.svg';
+  static const String microphone = 'assets/svg/microphone.svg';
+  static const String send = 'assets/svg/send.svg';
 
 
 

@@ -36,7 +36,16 @@ class AppRouter {
         name: Routes.filter.name,
         builder: (context, state) => const FiltersScreen(),
       ),
+      GoRoute(
+        path: '/messages',
+        name: Routes.messages.name,
+        builder: (context, state) {
+          final extras = state.extra as Map<String, dynamic>?;
+          final title = extras?['title'];
+          final image = extras?['image'];
+          return MessagesScreen(title: title, image: image);
+        },
+      ),
     ],
-
   );
 }
