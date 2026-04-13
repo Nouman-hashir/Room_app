@@ -6,5 +6,6 @@ enum Routes {
   bottomNav,
   filter,
   messages,
-  editprofile
+  editprofile,
+  notifications
 }
