@@ -46,6 +46,11 @@ class AppRouter {
           return MessagesScreen(title: title, image: image);
         },
       ),
+       GoRoute(
+        path: '/editprofile',
+        name: Routes.editprofile.name,
+        builder: (context, state) => const EditProfileScreen(),
+      ),
     ],
   );
 }

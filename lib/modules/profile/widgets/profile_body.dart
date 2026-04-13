@@ -10,7 +10,9 @@ class ProfileBody extends StatelessWidget {
       children: [
         Divider(color: AppColors.primaryColor, endIndent: 20, indent: 20,),
         10.verticalSpace,
-        ProfileTile(image: AppAssets.editProfile, title: "Edit Profile"),
+        ProfileTile(image: AppAssets.editProfile, title: "Edit Profile", onTap: () {
+          context.push('/editprofile');
+        }),
         ProfileTile(image: AppAssets.notificationSvg, title: "Notification", isNotification: true,),
         ProfileTile(image: AppAssets.privacy, title: "Privacy Policy"),
         ProfileTile(image: AppAssets.terms, title: "Terms & Conditions"),
