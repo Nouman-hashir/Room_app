@@ -1,14 +1,33 @@
 import '../../../app.dart';
 
 class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({super.key});
+  final bool isEdit;
+  const ProfileHeader({super.key, this.isEdit = false});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(AppAssets.profileImage, height: 60.h),
+        Stack(
+          children: [
+            Image.asset(AppAssets.profileImage, height: 60.h),
+            isEdit
+                ? Positioned(
+                    right: 0,
+                    bottom: 0,
+                    child: Container(
+                      padding: EdgeInsets.all(4.w),
+                      decoration: BoxDecoration(
+                        color: AppColors.primaryColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: SvgPicture.asset(AppAssets.edit, height: 13.h),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+          ],
+        ),
         20.horizontalSpace,
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

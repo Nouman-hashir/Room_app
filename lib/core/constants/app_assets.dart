@@ -40,6 +40,8 @@ class AppAssets {
   static const String terms = 'assets/svg/terms.svg';
   static const String logout = 'assets/svg/logout.svg';
   static const String delete = 'assets/svg/delete.svg';
+  static const String edit = 'assets/svg/edit.svg';
+
 
 
 
