@@ -23,76 +23,18 @@ class NotificationsScreen extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            20.verticalSpace,
-            Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(5.w),
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                20.horizontalSpace,
-                Image.asset(AppAssets.profileImage, height: 40.h),
-                20.horizontalSpace,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "ALi Khan inersected in your tour",
-                      style: AppTextStyles.bodyText1.copyWith(
-                        fontSize: 12.sp,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                    Text(
-                      "2 hour ago",
-                      style: AppTextStyles.bodyText1.copyWith(
-                        fontSize: 12.sp,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+            NotificationListItem(
+              image: AppAssets.profileImage,
+              name: "Usman Khan",
+              text: " Intersected in your tour",
             ),
             10.verticalSpace,
-            Divider(endIndent: 20, indent: 20),
-               10.verticalSpace,
-            Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(5.w),
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-                20.horizontalSpace,
-                Image.asset(AppAssets.profile1, height: 40.h),
-                20.horizontalSpace,
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Usman Khan inersected in your tour",
-                      style: AppTextStyles.bodyText1.copyWith(
-                        fontSize: 12.sp,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                    Text(
-                      "2 hour ago",
-                      style: AppTextStyles.bodyText1.copyWith(
-                        fontSize: 12.sp,
-                        color: AppColors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            )
+            NotificationListItem(
+              image: AppAssets.profile1,
+              name: "ALi Khan",
+              text: " Intersected in your tour",
+              isshow: false,
+            ),
           ],
         ),
       ),
