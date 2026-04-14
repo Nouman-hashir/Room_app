@@ -7,7 +7,7 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScaffold(
       showAppBar: true,
-      showBack: false,
+      showBack: true,
       title: "Notification",
       child: AppPadding(
         horizontal: 20,

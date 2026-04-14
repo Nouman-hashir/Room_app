@@ -7,5 +7,7 @@ enum Routes {
   filter,
   messages,
   editprofile,
-  notifications
+  notifications,
+  privacy,
+  terms,
 }

@@ -56,6 +56,16 @@ class AppRouter {
         name: Routes.notifications.name,
         builder: (context, state) => const NotificationsScreen(),
       ),
+       GoRoute(
+        path: '/privacy',
+        name: Routes.privacy.name,
+        builder: (context, state) => const PrivacyPolicyScreen(),
+      ),
+       GoRoute(
+        path: '/terms',
+        name: Routes.terms.name,
+        builder: (context, state) => const TermsAndConditionsScreen(),
+      ),
     ],
   );
 }

@@ -6,14 +6,18 @@ class AppButtons {
   static Widget customButton({
     required String text,
     required VoidCallback onTap,
+    Color? color,
+    double? width,
+    double? height,
+    Color? textColor,
   }) {
     return SizedBox(
-      width: double.infinity,
-      height: 50.h,
+      width: width ?? double.infinity,
+      height: height ?? 50.h,
       child: ElevatedButton(
         onPressed: onTap,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF0E7A3D),
+          backgroundColor: color ?? AppColors.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
           ),
@@ -21,8 +25,9 @@ class AppButtons {
         child: Text(
           text,
           style: AppTextStyles.subtitle1.copyWith(
-            color: AppColors.white,
-            fontWeight: FontWeight.w500,
+            color: textColor ?? AppColors.white,
+            fontWeight: FontWeight.w400,
+            fontSize: 14.sp,
           ),
         ),
       ),
