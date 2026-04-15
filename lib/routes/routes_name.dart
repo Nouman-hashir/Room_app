@@ -10,4 +10,5 @@ enum Routes {
   notifications,
   privacy,
   terms,
+  details
 }

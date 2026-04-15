@@ -10,6 +10,7 @@ class ChatTile extends StatelessWidget {
     return Column(
       children: [
         GestureDetector(
+           behavior: HitTestBehavior.opaque,
           onTap: () {
             context.push('/messages', extra:{
               'title': title,

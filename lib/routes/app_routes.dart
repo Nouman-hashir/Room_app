@@ -66,6 +66,11 @@ class AppRouter {
         name: Routes.terms.name,
         builder: (context, state) => const TermsAndConditionsScreen(),
       ),
+       GoRoute(
+        path: '/details',
+        name: Routes.details.name,
+        builder: (context, state) => const DetailsScreen(),
+      ),
     ],
   );
 }

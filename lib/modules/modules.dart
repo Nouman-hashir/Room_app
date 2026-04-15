@@ -8,3 +8,4 @@ export 'messages/messages.dart';
 export 'profile/profile.dart';
 export 'filters/filters.dart';
 export 'notifications/notifications.dart';
+export 'details/details.dart';
