@@ -22,9 +22,13 @@ class ProfileBody extends StatelessWidget {
           title: "Notification",
           isNotification: true,
         ),
+         ProfileTile(image: AppAssets.privacy, title: "My MotorHome",onTap: () {
+          context.push('/privacy');
+        },),
         ProfileTile(image: AppAssets.privacy, title: "Privacy Policy",onTap: () {
           context.push('/privacy');
         },),
+         
         ProfileTile(image: AppAssets.terms, title: "Terms & Conditions",onTap: () {
           context.push('/terms');
         }),

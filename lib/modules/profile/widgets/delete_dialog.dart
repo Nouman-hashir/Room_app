@@ -39,7 +39,7 @@ class DeleteDialog extends StatelessWidget {
                 Expanded(
                   child: AppButtons.customButton(
                     text: "No",
-                    height: 45,
+                    height: 45.h,
                     textColor: AppColors.black54,
                     color: AppColors.grey200,
                     onTap: () {
@@ -50,7 +50,7 @@ class DeleteDialog extends StatelessWidget {
                 10.horizontalSpace,
                 Expanded(
                   child: AppButtons.customButton(
-                    height: 45,
+                    height: 45.h,
                     color: AppColors.darkred,
                     text: "Yes",
                     onTap: () {

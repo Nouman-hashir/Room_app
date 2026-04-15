@@ -1,3 +1,5 @@
+import 'package:image_picker/image_picker.dart';
+
 import '../../../app.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -6,26 +8,44 @@ class ProfileHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.watch<ProfileProvider>();
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Stack(
           children: [
-            Image.asset(AppAssets.profileImage, height: 60.h),
-            isEdit
-                ? Positioned(
-                    right: 0,
-                    bottom: 0,
-                    child: Container(
-                      padding: EdgeInsets.all(4.w),
-                      decoration: BoxDecoration(
-                        color: AppColors.primaryColor,
-                        shape: BoxShape.circle,
-                      ),
-                      child: SvgPicture.asset(AppAssets.edit, height: 13.h),
+            Container(
+              height: 60.h,
+              width: 60.h,
+              decoration: const BoxDecoration(shape: BoxShape.circle),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(100.r),
+                child: provider.profileImage != null
+                    ? Image.file(provider.profileImage!, fit: BoxFit.cover)
+                    : Image.asset(AppAssets.profileImage, fit: BoxFit.cover),
+              ),
+            ),
+            if (isEdit)
+              Positioned(
+                right: 0,
+                bottom: 0,
+                child: GestureDetector(
+                  onTap: () {
+                    context.read<ProfileProvider>().pickImage(
+                      source: ImageSource.gallery,
+                    );
+                  },
+                  child: Container(
+                    padding: EdgeInsets.all(4.w),
+                    decoration: const BoxDecoration(
+                      color: AppColors.primaryColor,
+                      shape: BoxShape.circle,
                     ),
-                  )
-                : const SizedBox.shrink(),
+                    child: SvgPicture.asset(AppAssets.edit, height: 13.h),
+                  ),
+                ),
+              ),
           ],
         ),
         20.horizontalSpace,

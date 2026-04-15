@@ -10,13 +10,15 @@ class ProfileScreen extends StatelessWidget {
       showBack: false,
       title: "Profile",
       child: AppPadding(
-        child: Column(
-          children: [
-            20.verticalSpace,
-            ProfileHeader(),
-            20.verticalSpace,
-            ProfileBody(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              20.verticalSpace,
+              ProfileHeader(),
+              20.verticalSpace,
+              ProfileBody(),
+            ],
+          ),
         ),
       ),
     );

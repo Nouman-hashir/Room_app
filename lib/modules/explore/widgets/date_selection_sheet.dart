@@ -8,6 +8,7 @@ class DateSelectionSheet extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.all(16.w),
         decoration: BoxDecoration(
           color: AppColors.white,
@@ -31,7 +32,7 @@ class DateSelectionSheet extends StatelessWidget {
                 ),
                 labelColor: AppColors.primaryColor,
                 unselectedLabelColor: AppColors.black,
-                labelStyle: AppTextStyles.subtitle2,
+                labelStyle: AppTextStyles.subtitle2.copyWith(fontSize: 12.sp),
                 tabs: const [
                   Tab(text: "Dates"),
                   Tab(text: "Flexible"),
@@ -39,7 +40,8 @@ class DateSelectionSheet extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 190.h,
+              height: 200.h,
+              width: double.infinity,
               child: TabBarView(children: [DatesTab(), FlexibleTab()]),
             ),
             AppButtons.customButton(

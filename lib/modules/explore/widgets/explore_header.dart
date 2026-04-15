@@ -9,7 +9,9 @@ class ExploreHeader extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
       child: Row(
         children: [
-          Image.asset(AppAssets.profileImage, height: 40.h),
+          GestureDetector(
+              onTap: () => context.read<BottomNavProvider>().updateIndex(4),
+            child: Image.asset(AppAssets.profileImage, height: 40.h)),
           10.horizontalSpace,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,8 +43,8 @@ class ExploreHeader extends StatelessWidget {
                 right: 0,
                 top: 0,
                 child: Container(
-                  height: 8,
-                  width: 8,
+                  height: 8.h,
+                  width: 8.w,
                   decoration: BoxDecoration(
                     color: AppColors.primaryColor,
                     shape: BoxShape.circle,
