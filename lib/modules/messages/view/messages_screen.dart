@@ -19,14 +19,16 @@ class MessagesScreen extends StatelessWidget {
               child: Consumer<ChatProvider>(
                 builder: (context, provider, child) {
                   return ListView.separated(
+                    controller: provider.scrollController,
                     separatorBuilder: (context, index) => 10.verticalSpace,
                     itemCount: provider.messages.length,
                     itemBuilder: (context, index) {
-                      final item = provider.messages[index];
+                      final message = provider.messages[index];
+
                       return ChatBubble(
-                        message: item.message,
-                        isMe: item.isMe,
-                        time: item.time,
+                        message: message.message,
+                        isMe: message.isMe,
+                        time: message.time,
                       );
                     },
                   );
@@ -37,12 +39,16 @@ class MessagesScreen extends StatelessWidget {
               builder: (context, provider, child) {
                 return provider.isTyping
                     ? Padding(
-                        padding: const EdgeInsets.only(left: 15, bottom: 5),
+                        padding: const EdgeInsets.only(
+                          left: 5,
+                          bottom: 5,
+                          top: 5,
+                        ),
                         child: Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "Asim Ali is typing.....",
-                            style: TextStyle(color: Colors.grey),
+                            style: TextStyle(color: AppColors.grey),
                           ),
                         ),
                       )

@@ -2,6 +2,7 @@ import '../../../app.dart';
 
 class ChatProvider extends ChangeNotifier {
   final TextEditingController controller = TextEditingController();
+  final ScrollController scrollController = ScrollController();
   List<MessageModel> messages = [
     MessageModel(
       message: "Hi, Thanks for adding me",
@@ -18,7 +19,7 @@ class ChatProvider extends ChangeNotifier {
   ];
 
   bool isTyping = false;
-  void sendMessage() {
+  void sendMessage(BuildContext context) {
     if (controller.text.trim().isEmpty) return;
 
     messages.add(
@@ -26,6 +27,7 @@ class ChatProvider extends ChangeNotifier {
     );
 
     controller.clear();
+      FocusScope.of(context).unfocus();
     notifyListeners();
 
     simulateReply();
@@ -42,4 +44,14 @@ class ChatProvider extends ChangeNotifier {
     isTyping = false;
     notifyListeners();
   }
+
+  void scrollToBottom() {
+  if (scrollController.hasClients) {
+    scrollController.animateTo(
+      scrollController.position.minScrollExtent, // because reverse = true
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeOut,
+    );
+  }
+}
 }

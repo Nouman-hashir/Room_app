@@ -20,6 +20,9 @@ class VehicleList extends StatelessWidget {
         return VehicleListItem(
           title: "Modern Super Cozy \nLeft HD",
           image: vehicles[index],
+          onTap: () {
+            context.push('/details');
+          },
         );
       },
     );

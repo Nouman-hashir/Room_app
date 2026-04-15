@@ -21,6 +21,7 @@ class ProfileTile extends StatelessWidget {
       child: Column(
         children: [
           GestureDetector(
+             behavior: HitTestBehavior.opaque,
             onTap:  onTap,
             child: Row(
               children: [

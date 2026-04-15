@@ -11,9 +11,9 @@ class MessageInput extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       child: Row(
         children: [
-          SvgPicture.asset(AppAssets.gallery, height: 24),
+          SvgPicture.asset(AppAssets.gallery, height: 24.h),
           10.horizontalSpace,
-          SvgPicture.asset(AppAssets.microphone, height: 24),
+          SvgPicture.asset(AppAssets.microphone, height: 24.h),
           10.horizontalSpace,
           Expanded(
             child: TextField(
@@ -35,10 +35,10 @@ class MessageInput extends StatelessWidget {
           ),
           10.horizontalSpace,
           GestureDetector(
-            onTap: provider.sendMessage,
+           onTap: () => provider.sendMessage(context),
             child: CircleAvatar(
               backgroundColor: AppColors.lightgreen,
-              child: SvgPicture.asset(AppAssets.send, height: 24),
+              child: SvgPicture.asset(AppAssets.send, height: 24.h),
             ),
           ),
         ],
