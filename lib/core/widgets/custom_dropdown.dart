@@ -8,6 +8,8 @@ class CustomDropdown<T> extends StatelessWidget {
   final String? prefixIcon;
   final bool isCustom;
   final VoidCallback? onTap;
+  final Color? color;
+  final Color? borderColor;
 
   const CustomDropdown({
     super.key,
@@ -18,6 +20,8 @@ class CustomDropdown<T> extends StatelessWidget {
     this.prefixIcon,
     this.isCustom = false,
     this.onTap,
+    this.color,
+    this.borderColor,
   });
 
   @override
@@ -27,9 +31,10 @@ class CustomDropdown<T> extends StatelessWidget {
       child: Container(
         padding: isCustom
             ? EdgeInsets.symmetric(horizontal: 12.w, vertical: 11.h)
-            : EdgeInsets.symmetric(horizontal: 12.w, vertical: 11.h),
+            : EdgeInsets.symmetric(horizontal: 12.w, ),
         decoration: BoxDecoration(
-          border: Border.all(color: AppColors.grey300, width: 0.75.w),
+          border: Border.all(color:  borderColor ?? AppColors.grey300, width: 0.75.w),
+          color:  color ?? AppColors.white,
           borderRadius: BorderRadius.circular(12.r),
         ),
         child: isCustom
@@ -51,7 +56,7 @@ class CustomDropdown<T> extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Icon(Icons.keyboard_arrow_down),
+                  const Icon(Icons.keyboard_arrow_down, color: AppColors.primaryColor,),
                 ],
               )
             : DropdownButtonHideUnderline(
@@ -75,7 +80,7 @@ class CustomDropdown<T> extends StatelessWidget {
                       ],
                     ),
                   ),
-                  icon: const Icon(Icons.keyboard_arrow_down),
+                  icon: const Icon(Icons.keyboard_arrow_down, color: AppColors.primaryColor,),
                   items: items.map((item) {
                     return DropdownMenuItem<T>(
                       value: item,

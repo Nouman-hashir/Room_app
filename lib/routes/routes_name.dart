@@ -10,5 +10,6 @@ enum Routes {
   notifications,
   privacy,
   terms,
-  details
+  details,
+  motorhome,
 }
