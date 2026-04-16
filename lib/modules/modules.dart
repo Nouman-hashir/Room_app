@@ -9,3 +9,4 @@ export 'profile/profile.dart';
 export 'filters/filters.dart';
 export 'notifications/notifications.dart';
 export 'details/details.dart';
+export 'motorhomes/motorhomes.dart';

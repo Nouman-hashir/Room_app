@@ -46,30 +46,35 @@ class AppRouter {
           return MessagesScreen(title: title, image: image);
         },
       ),
-       GoRoute(
+      GoRoute(
         path: '/editprofile',
         name: Routes.editprofile.name,
         builder: (context, state) => const EditProfileScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: '/notification',
         name: Routes.notifications.name,
         builder: (context, state) => const NotificationsScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: '/privacy',
         name: Routes.privacy.name,
         builder: (context, state) => const PrivacyPolicyScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: '/terms',
         name: Routes.terms.name,
         builder: (context, state) => const TermsAndConditionsScreen(),
       ),
-       GoRoute(
+      GoRoute(
         path: '/details',
         name: Routes.details.name,
         builder: (context, state) => const DetailsScreen(),
+      ),
+      GoRoute(
+        path: '/motorhome',
+        name: Routes.motorhome.name,
+        builder: (context, state) => const MotorhomesScreen(),
       ),
     ],
   );
