@@ -6,7 +6,6 @@ class AuthHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 310.h,
       width: double.infinity,
       child: Stack(
         children: [

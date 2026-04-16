@@ -27,7 +27,7 @@ class ChatProvider extends ChangeNotifier {
     );
 
     controller.clear();
-      FocusScope.of(context).unfocus();
+    FocusScope.of(context).unfocus();
     notifyListeners();
 
     simulateReply();
@@ -46,12 +46,12 @@ class ChatProvider extends ChangeNotifier {
   }
 
   void scrollToBottom() {
-  if (scrollController.hasClients) {
-    scrollController.animateTo(
-      scrollController.position.minScrollExtent, // because reverse = true
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeOut,
-    );
+    if (scrollController.hasClients) {
+      scrollController.animateTo(
+        scrollController.position.minScrollExtent, // because reverse = true
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
+    }
   }
-}
 }

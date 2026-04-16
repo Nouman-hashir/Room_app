@@ -5,13 +5,17 @@ class DatesTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        _chip("Exact", isSelected: true),
-        _chip("1 day"),
-        _chip("2 day"),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        spacing: 8.w,
+        children: [
+          _chip("Exact", isSelected: true),
+          _chip("1 day"),
+          _chip("2 day"),
+        ],
+      ),
     );
   }
 }

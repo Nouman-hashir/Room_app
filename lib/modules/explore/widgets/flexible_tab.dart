@@ -5,31 +5,36 @@ class FlexibleTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        5.verticalSpace,
-        Text("Trip Length"),
-        15.verticalSpace,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _chip("1 Week", isSelected: true),
-            _chip("2 Weeks"),
-            _chip("3 Weeks"),
-          ],
-        ),
-        15.verticalSpace,
-        Text("Departure Month"),
-        15.verticalSpace,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _chip("January"),
-            _chip("February", isSelected: true),
-            _chip("March"),
-          ],
-        ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Column(
+        children: [
+          5.verticalSpace,
+          Text("Trip Length"),
+          15.verticalSpace,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            spacing: 10.w,
+            children: [
+              _chip("1 Week", isSelected: true),
+              _chip("2 Weeks"),
+              _chip("3 Weeks"),
+            ],
+          ),
+          15.verticalSpace,
+          Text("Departure Month"),
+          15.verticalSpace,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            spacing: 10.w,
+            children: [
+              _chip("January"),
+              _chip("February", isSelected: true),
+              _chip("March"),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

@@ -38,7 +38,8 @@ class MessageInput extends StatelessWidget {
            onTap: () => provider.sendMessage(context),
             child: CircleAvatar(
               backgroundColor: AppColors.lightgreen,
-              child: SvgPicture.asset(AppAssets.send, height: 24.h),
+              radius: 25.r,
+              child: SvgPicture.asset(AppAssets.send, height: 22.h),
             ),
           ),
         ],

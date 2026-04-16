@@ -18,30 +18,33 @@ class DetailsBody extends StatelessWidget {
         ),
         VehicleDetails(),
         10.verticalSpace,
-        Container(
-          margin: EdgeInsets.only(left: 160, right: 20),
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: AppColors.grey200),
-          ),
-          child: Row(
-            children: [
-              Icon(
-                Icons.favorite_border_outlined,
-                color: AppColors.primaryColor,
-                size: 15.sp,
-              ),
-              5.horizontalSpace,
-              Text(
-                "Add to favourites",
-                style: AppTextStyles.subtitle2.copyWith(
+        Align(
+          alignment: Alignment.centerRight,
+          child: Container(
+            width: 160.w,
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+            decoration: BoxDecoration(
+              color: AppColors.white,
+              borderRadius: BorderRadius.circular(16.r),
+              border: Border.all(color: AppColors.grey200),
+            ),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.favorite_border_outlined,
                   color: AppColors.primaryColor,
-                  fontSize: 13.sp,
+                  size: 15.sp,
                 ),
-              ),
-            ],
+                5.horizontalSpace,
+                Text(
+                  "Add to favourites",
+                  style: AppTextStyles.subtitle2.copyWith(
+                    color: AppColors.primaryColor,
+                    fontSize: 13.sp,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         30.verticalSpace,

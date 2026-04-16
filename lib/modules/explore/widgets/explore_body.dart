@@ -26,7 +26,7 @@ class ExploreBody extends StatelessWidget {
                       isScrollControlled: true,
                       backgroundColor: Colors.transparent,
                       builder: (_) =>
-                          Wrap(children: const [DateSelectionSheet()]),
+                          DateSelectionSheet(),
                     );
                   },
                   value: null,

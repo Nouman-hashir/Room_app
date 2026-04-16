@@ -53,21 +53,21 @@ class CustomChatAppBar extends StatelessWidget {
         ),
         actions: [
           Container(
-            padding:  EdgeInsets.all(10.w),
+            padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
             decoration: BoxDecoration(
               color: AppColors.lightgreen,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: SvgPicture.asset(AppAssets.call,height: 20.h,),
+            child: SvgPicture.asset(AppAssets.call,height: 20.h, width: 20.w,),
           ),
           10.horizontalSpace,
           Container(
-            padding: EdgeInsets.all(10.w),
+            padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
             decoration: BoxDecoration(
               color: AppColors.lightgreen,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: SvgPicture.asset(AppAssets.videoCall,height: 20.h,),
+            child: SvgPicture.asset(AppAssets.videoCall,height: 20.h,width: 20.w,),
           ),
         ],
       ),
