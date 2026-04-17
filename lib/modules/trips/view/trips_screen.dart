@@ -24,10 +24,13 @@ class TripsScreen extends StatelessWidget {
                 separatorBuilder: (context, index) => 20.verticalSpace,
                 itemCount: vehicles.length,
                 itemBuilder: (context, index) {
-                  return VehicleListItem(
-                    title: "Modern Super Cozy \nLeft HD",
-                    image: vehicles[index],
-                    istrip: true,
+                  return GestureDetector(
+                    onTap: () => context.push('/details'),
+                    child: VehicleListItem(
+                      title: "Modern Super Cozy \nLeft HD",
+                      image: vehicles[index],
+                      istrip: true,
+                    ),
                   );
                 },
               ),

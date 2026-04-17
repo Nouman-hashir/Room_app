@@ -11,6 +11,8 @@ export 'package:go_router/go_router.dart';
 export 'package:provider/provider.dart';
 export 'package:room/main.dart';
 export 'package:flutter_svg/flutter_svg.dart';
+export 'package:table_calendar/table_calendar.dart';
+export 'package:url_launcher/url_launcher.dart';
 
 //widgets
 export 'package:dotted_line/dotted_line.dart';

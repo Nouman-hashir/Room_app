@@ -8,8 +8,9 @@ class AppRouter {
     routes: [
       GoRoute(
         path: '/',
-        name: Routes.splash.name,
-        builder: (context, state) => const SplashScreen(),
+        builder: (context, state) {
+          return const SplashScreen();
+        },
       ),
       GoRoute(
         path: '/login',
@@ -75,6 +76,11 @@ class AppRouter {
         path: '/motorhome',
         name: Routes.motorhome.name,
         builder: (context, state) => const MotorhomesScreen(),
+      ),
+      GoRoute(
+        path: '/reviews',
+        name: Routes.reviews.name,
+        builder: (context, state) => const ReviewsScreen(),
       ),
     ],
   );

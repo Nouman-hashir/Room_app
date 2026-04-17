@@ -10,3 +10,4 @@ export 'filters/filters.dart';
 export 'notifications/notifications.dart';
 export 'details/details.dart';
 export 'motorhomes/motorhomes.dart';
+export 'reviews/reviews.dart';

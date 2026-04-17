@@ -2,6 +2,15 @@ import '../../../app.dart';
 
 class BookingProvider extends ChangeNotifier {
   final PageController pageController = PageController();
+  DateTime _focusedDay = DateTime.now();
+  DateTime? _selectedDay;
+
+  DateTime get focusedDay => _focusedDay;
+  DateTime? get selectedDay => _selectedDay;
+  DateTime get today =>
+      DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
+
+  DateTime normalize(DateTime d) => DateTime(d.year, d.month, d.day);
 
   int currentIndex = 0;
 
@@ -38,5 +47,15 @@ class BookingProvider extends ChangeNotifier {
       );
       notifyListeners();
     }
+  }
+
+  void selectDay(DateTime selected, DateTime focused) {
+    _selectedDay = selected;
+    _focusedDay = focused;
+    notifyListeners();
+  }
+
+  bool isEnabled(DateTime day) {
+    return !normalize(day).isBefore(today);
   }
 }

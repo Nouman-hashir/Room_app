@@ -48,10 +48,22 @@ class ChatProvider extends ChangeNotifier {
   void scrollToBottom() {
     if (scrollController.hasClients) {
       scrollController.animateTo(
-        scrollController.position.minScrollExtent, // because reverse = true
+        scrollController.position.minScrollExtent,
         duration: const Duration(milliseconds: 300),
         curve: Curves.easeOut,
       );
     }
+  }
+
+  Future<void> makePhoneCall(String phoneNumber) async {
+  final Uri uri = Uri.parse('tel:$phoneNumber');
+
+  final bool launched = await launchUrl(
+    uri,
+    mode: LaunchMode.externalApplication,
+  );
+  if (!launched) {
+    throw 'Dialer not available on this device';
+  }
   }
 }

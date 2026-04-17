@@ -5,12 +5,14 @@ class CustomChatAppBar extends StatelessWidget {
   final Widget child;
   final String title;
   final String image;
+  final VoidCallback? onCallTap;
   const CustomChatAppBar({
     super.key,
     this.backgroundColor,
     required this.child,
     required this.title,
-    required this.image
+    required this.image,
+    this.onCallTap,
   });
 
   @override
@@ -30,7 +32,7 @@ class CustomChatAppBar extends StatelessWidget {
             10.horizontalSpace,
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
+              children: [
                 Text(
                   title,
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -52,22 +54,33 @@ class CustomChatAppBar extends StatelessWidget {
           ],
         ),
         actions: [
-          Container(
-            padding:  EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
-            decoration: BoxDecoration(
-              color: AppColors.lightgreen,
-              borderRadius: BorderRadius.circular(12),
+          GestureDetector(
+            onTap: onCallTap,
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: AppColors.lightgreen,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: SvgPicture.asset(
+                AppAssets.call,
+                height: 20.h,
+                width: 20.w,
+              ),
             ),
-            child: SvgPicture.asset(AppAssets.call,height: 20.h, width: 20.w,),
           ),
           10.horizontalSpace,
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10.w,vertical: 10.h),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
             decoration: BoxDecoration(
               color: AppColors.lightgreen,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: SvgPicture.asset(AppAssets.videoCall,height: 20.h,width: 20.w,),
+            child: SvgPicture.asset(
+              AppAssets.videoCall,
+              height: 20.h,
+              width: 20.w,
+            ),
           ),
         ],
       ),

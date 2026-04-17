@@ -10,10 +10,17 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState() {
+
+ void initState() {
     super.initState();
-    Future.microtask(() {
-      context.read<SplashProvider>().init(context);
+
+    Future.microtask(() async {
+      final provider = context.read<SplashProvider>();
+      await provider.init(context);
+
+      if (mounted) {
+        context.push('/login');
+      }
     });
   }
 
@@ -25,11 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-             AppAssets.splashIcon,
-              width: 140.w,
-              height: 140.h,
-            ),
+            Image.asset(AppAssets.splashIcon, width: 140.w, height: 140.h),
           ],
         ),
       ),

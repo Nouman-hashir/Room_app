@@ -7,9 +7,11 @@ class MessagesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final provider = context.watch<ChatProvider>();
     return CustomChatAppBar(
       title: title,
       image: image,
+      onCallTap: () => provider.makePhoneCall('+923144119646'),
       child: AppPadding(
         horizontal: 20,
         child: Column(

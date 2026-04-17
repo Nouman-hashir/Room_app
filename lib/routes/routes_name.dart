@@ -12,4 +12,5 @@ enum Routes {
   terms,
   details,
   motorhome,
+  reviews
 }
