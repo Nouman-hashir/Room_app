@@ -4,3 +4,4 @@ export 'utils/utils.dart';
 export 'widgets/widgets.dart';
 export 'services/services.dart';
 export 'errors/errors.dart';
+export 'di/di.dart';

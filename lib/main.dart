@@ -15,18 +15,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(390, 844),
       minTextAdapt: true,
       child: MultiProvider(
-        providers: [
-          ChangeNotifierProvider(create: (_) => SplashProvider()),
-          ChangeNotifierProvider(create: (_) => TextfieldProvider()),
-          ChangeNotifierProvider(create: (_) => ForgetPasswordProvider()),
-          ChangeNotifierProvider(create: (_) => LoginProvider()),
-          ChangeNotifierProvider(create: (_) => BottomNavProvider()),
-          ChangeNotifierProvider(create: (_) => FilterProvider()),
-          ChangeNotifierProvider(create: (_) => ExplorerProvider()),
-          ChangeNotifierProvider(create: (_) => ChatProvider()),
-          ChangeNotifierProvider(create: (_) => ProfileProvider()),
-          ChangeNotifierProvider(create: (_) => BookingProvider()),
-        ],
+        providers: registerGlobalNotifiers(),
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           title: 'Room',

@@ -10,13 +10,16 @@ class DetailsScreen extends StatelessWidget {
       showBack: true,
       title: "Book a car",
       child: AppPadding(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CarImageSlider(),
-            20.verticalSpace,
-            DetailsBody(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CarImageSlider(),
+              20.verticalSpace,
+              DetailsBody(),
+              
+            ],
+          ),
         ),
       ),
     );

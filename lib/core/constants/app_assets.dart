@@ -41,11 +41,8 @@ class AppAssets {
   static const String logout = 'assets/svg/logout.svg';
   static const String delete = 'assets/svg/delete.svg';
   static const String edit = 'assets/svg/edit.svg';
-
-
-
-
-
-
+  static const String star = 'assets/svg/star.svg';
+  static const String messagenotify = 'assets/svg/message-notif.svg';
+  static const String map = 'assets/svg/map.svg';
 
 }
